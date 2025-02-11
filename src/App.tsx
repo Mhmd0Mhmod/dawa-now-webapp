@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import Layout from "./Layout";
 import Home from "./pages/Home";
+import Orders from "@/pages/Orders.tsx";
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
         <Routes>
           <Route element={<Layout />}>
             <Route index element={<Navigate to={"/home"} replace />} />
-            <Route path="/home" element={<Home />} />
+            <Route path="home" element={<Home />} />
+            <Route path={"orders"} element={<Orders/>}/>
           </Route>
         </Routes>
       </Router>

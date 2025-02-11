@@ -1,11 +1,17 @@
-import React, { cloneElement, createContext, ReactElement, useContext, useEffect, useState } from "react";
+import React, {  createContext, ReactElement, useContext, useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 
+interface ChildrenProps {
+  onClick: () => void;
+}
 const DialogContext = createContext<{
   name: string;
   setName: React.Dispatch<React.SetStateAction<string>>;
 }>({
   name: "",
-  setName: () => {},
+  setName: () => {
+    return;
+  },
 });
 
 function Dialog({ children }: { children: React.ReactNode }) {
@@ -29,7 +35,8 @@ function Trigger({ name, children }: { name: string; children: React.ReactNode }
     setName(name);
   }
 
-  return cloneElement(children as ReactElement<any>, { onClick: handleClick });
+    if(React.isValidElement(children))
+  return React.cloneElement(children as ReactElement<ChildrenProps>, { onClick: handleClick });
 }
 
 function Content({ name, className, children }: { name: string; className?: string; children: React.ReactNode }) {
@@ -49,23 +56,22 @@ function Content({ name, className, children }: { name: string; className?: stri
       if (e.key === "Escape") setName("");
     }
     if (dialogName === name) {
-      document.addEventListener("keydown", handleKeyDown
-      );
+      document.addEventListener("keydown", handleKeyDown);
     }
     return () => {
-      document.removeEventListener("keydown",handleKeyDown);
+      document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [ dialogName, name, setName]);
+  }, [dialogName, name, setName]);
   if (dialogName !== name) return null;
 
   function handleClick(e: React.MouseEvent<HTMLDivElement>) {
     if (e.target === e.currentTarget) setName("");
   }
 
-  return (
+  return createPortal(
     <div className="fixed inset-0 z-10 bg-black bg-opacity-50" onClick={handleClick}>
       <div className={`fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform overflow-hidden rounded-lg bg-white ${className}`}>{children}</div>
-    </div>
+    </div>,document.body
   );
 }
 

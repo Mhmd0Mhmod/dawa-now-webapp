@@ -205,4 +205,9 @@
     @apply bg-background text-foreground;
     }
 }
-  
+
+.empty-cart{
+  background-image: url("/public/assets/SpiderNet.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+}
