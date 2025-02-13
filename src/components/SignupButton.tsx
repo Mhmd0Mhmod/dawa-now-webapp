@@ -6,7 +6,7 @@ function SignupButton() {
   return (
     <>
       <Dialog.Trigger name="signup">
-        <Button variant={"ghost"} className="border border-black">
+        <Button variant={"ghost"} className="border border-black hover:text-blue-450 hover:border-blue-450 sm:block hidden">
           انشاء حساب
         </Button>
       </Dialog.Trigger>

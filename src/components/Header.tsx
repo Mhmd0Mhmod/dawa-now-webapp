@@ -1,24 +1,28 @@
-import Dialog from "@/Context/Dialog";
-import LoginButton from "./LoginButton";
 import Logo from "./Logo";
-import SignupButton from "./SignupButton";
+import NavLinks from "@/components/NavLinks.tsx";
+import RegistrationButtons from "@/components/RegistrationButtons.tsx";
+import { PiListThin } from "react-icons/pi";
+import { Button } from "@/components/ui/button.tsx";
 
 function Header() {
   return (
-    <div className="cont bg-blue-450 px-4">
-      <div className="flex items-center justify-between">
-        <div className="flex flex-1 items-center justify-center">
-          <Logo center />
-        </div>
-        <Dialog>
-          <div className="flex gap-5">
-            <LoginButton />
-            <span className="w-px flex-1 bg-black" />
-            <SignupButton />
+    <>
+      <header className={"pb-2 shadow-sm"}>
+        <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+          <div className="flex h-16 items-center justify-between">
+            <Logo />
+            <NavLinks />
+            <RegistrationButtons>
+              <div className="block md:hidden">
+                <Button variant={"ghost"}>
+                  <PiListThin />
+                </Button>
+              </div>
+            </RegistrationButtons>
           </div>
-        </Dialog>
-      </div>
-    </div>
+        </div>
+      </header>
+    </>
   );
 }
 

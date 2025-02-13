@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App.tsx";
 import { ErrorBoundary } from "react-error-boundary";
 import Error from "./Error.tsx";
+// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ErrorBoundary
@@ -14,5 +15,5 @@ createRoot(document.getElementById("root")!).render(
     >
       <App />
     </ErrorBoundary>
-  </StrictMode>
+  </StrictMode>,
 );

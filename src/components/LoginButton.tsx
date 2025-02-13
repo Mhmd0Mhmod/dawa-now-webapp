@@ -6,7 +6,7 @@ function LoginButton() {
   return (
     <>
       <Dialog.Trigger name="login">
-        <Button variant={"ghost"} className="border border-black">
+        <Button variant={"link"} className={"text-blue-450 text-md"}>
           تسجيل الدخول
         </Button>
       </Dialog.Trigger>

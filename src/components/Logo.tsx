@@ -1,4 +1,5 @@
-import LogoNoText from "/public/assets/logoNoText.svg?react";
+import { Link } from "react-router-dom";
+import Dawa from "/public/assets/Dawa.png";
 
 Logo.defaultProps = {
   center: false,
@@ -6,14 +7,13 @@ Logo.defaultProps = {
 
 // function Logo({ center }: { center?: boolean }) {
 
-function Logo() {
+function Logo({ className }: { className?: string }) {
   return (
-    <div className="relative flex items-center">
-      <h1 className={`font-k2d text-7xl font-extrabold text-white`}>DawaNow</h1>
-      <div>
-        <LogoNoText className={"w-full"} />
+    <Link to={"/"}>
+      <div className={`w-56 md:flex md:items-center md:gap-12 ${className}`}>
+        <img src={Dawa} className={"w-full"} alt={"dawa-now logo"} />
       </div>
-    </div>
+    </Link>
   );
 }
 

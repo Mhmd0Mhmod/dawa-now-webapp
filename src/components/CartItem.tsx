@@ -1,4 +1,4 @@
-import { CartItemType as itemType } from "@/types/CartItemType.ts";
+import { Medicine as itemType } from "@/types/Medicine.ts";
 import { useState } from "react";
 import Counter from "@/components/Counter.tsx";
 import { X } from "lucide-react";

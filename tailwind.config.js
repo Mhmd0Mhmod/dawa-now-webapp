@@ -13,7 +13,7 @@ export default {
         "3xl": "6px 6px 12px rgba(0, 0, 0, 0.8)",
       },
       colors: {
-        "blue-450": "#3AA7DA",
+        "blue-450": "#43b0e4",
         "blue-1000": "#090A1F",
         "sky-650" : "#036796",
         background: "hsl(var(--background))",

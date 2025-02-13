@@ -16,7 +16,7 @@ function CreateOrderForm() {
   }
 
   return (
-    <div className={"space-y-5 rounded-lg border"}>
+    <div className={"space-y-5 rounded-lg border shadow-md duration-100 hover:border-blue-450"}>
       <h1 className={"text-center text-5xl"}>اكتب طلبك</h1>
       <hr className={"border-t-2 border-black"} />
       <form>
@@ -32,13 +32,12 @@ function CreateOrderForm() {
           {selectedImage ? (
             <div className={"flex justify-center"}>
               <img src={selectedImage} alt={"Selected"} className={"h-auto max-w-full rounded-lg"} />
-
             </div>
           ) : (
             <div>
               <label htmlFor={"picture"} className={"block w-full rounded-xl border border-black px-4 py-2 text-center"}>
                 اختر صورة
-                <input type={"file"} id={"picture"} className={"hidden"} accept={"image/*"}  onChange={handleImageChange} />
+                <input type={"file"} id={"picture"} className={"hidden"} accept={"image/*"} onChange={handleImageChange} />
               </label>
             </div>
           )}
