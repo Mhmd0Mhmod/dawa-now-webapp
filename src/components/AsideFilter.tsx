@@ -11,8 +11,8 @@ const filteItems = [
   { name: "العناية بالشعر" },
 ];
 function AsideFilter() {
-  const [active, setActive] = useState(0);
-  const [searchParam, setSearchParam] = useSearchParams();
+  // const [active, setActive] = useState(0);
+  // const [searchParam, setSearchParam] = useSearchParams();
   return (
     <div className="col-span-2 min-w-fit text-gray-500">
       <ul className="space-y-4">
