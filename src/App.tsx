@@ -12,7 +12,7 @@ function App() {
           <Route element={<Layout />}>
             <Route index element={<Navigate to={"/home"} replace />} />
             <Route path="home" element={<Home />} />
-            <Route path={"orders"} element={<Orders />} />
+            <Route path={"orders/new"} element={<Orders />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

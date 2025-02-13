@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button.tsx";
 function Header() {
   return (
     <>
-      <header className={"pb-2 shadow-sm"}>
+      <header className={"pb-2 shadow-sm shadow-blue-450"}>
         <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
             <Logo />

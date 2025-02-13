@@ -1,3 +1,4 @@
+import CartButton from "@/components/CartButton.tsx";
 import AsideFilter from "../components/AsideFilter.tsx";
 import ProductsCards from "@/components/ProductsCards.tsx";
 import { Separator } from "@/components/ui/separator.tsx";
@@ -128,8 +129,9 @@ function Home() {
   return (
     <div className={"grid grid-cols-12 gap-4"}>
       <AsideFilter />
-      <Separator orientation={"vertical"} />
+      <Separator orientation={"vertical"} className="bg-blue-450" />
       <ProductsCards products={products} />
+      <CartButton />
     </div>
   );
 }

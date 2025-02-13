@@ -7,7 +7,7 @@ function Card({ product }: { product: Medicine }) {
   console.log(product);
   const [count, setCount] = useState<number>(0);
   return (
-    <div className="min-w-fit max-w-72 space-y-5 rounded-xl border px-4 py-2 text-center shadow-md">
+    <div className="min-w-fit max-w-72 space-y-5 rounded-xl border bg-gray-50 px-4 py-2 text-center shadow-md">
       <h1 className={"text-xl"}>{product.name} </h1>
       <p className={"text-gray-500"}>{product.description}</p>
       <div className="m-auto flex w-fit items-center justify-center gap-4">

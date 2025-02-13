@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Medicine } from "@/types/Medicine.ts";
 import { Button } from "@/components/ui/button.tsx";
 
-function CartList() {
+function CartList({ className }: { className?: string }) {
   const [cart, setCart] = useState<Medicine[]>([
     {
       id: 1,
@@ -132,7 +132,7 @@ function CartList() {
     setCart([]);
   }
   return (
-    <div className={"space-y-5 rounded-lg border shadow-md duration-100 hover:border-blue-450"}>
+    <div className={`space-y-5 rounded-lg border shadow-md duration-100 hover:border-blue-450 ${className}`}>
       <h1 className={"text-center text-5xl"}>عربة التسوق</h1>
       <hr className={"border-t-2 border-black"} />
       {cart.length > 0 ? (
