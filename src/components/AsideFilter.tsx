@@ -11,7 +11,7 @@ const filteItems = [
   { name: "العناية بالشعر" },
 ];
 function AsideFilter() {
-  // const [active, setActive] = useState(0);
+  const [active, setActive] = useState(0);
   // const [searchParam, setSearchParam] = useSearchParams();
   return (
     <div className="col-span-2 min-w-fit text-gray-500">
@@ -20,6 +20,7 @@ function AsideFilter() {
           <li
             key={index}
             className={`cursor-pointer rounded-lg p-2 duration-200 hover:scale-100 hover:transform hover:bg-gray-100 hover:text-blue-450 ${active === index ? "bg-gray-100 text-blue-450" : ""}`}
+            onClick={() => setActive(index)}
           >
             {item.name}
           </li>
