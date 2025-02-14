@@ -4,6 +4,8 @@ const links = [
   { title: "من نحن", url: "about" },
   { title: "اقرب الصيدليات", url: "nearestP" },
   { title: "تواصل معانا", url: "contact" },
+  { title: "طلباتي", url: "orders" },
+  {title: "الاستجابات", url: "responses"},
 ];
 
 function NavLinks() {

@@ -5,7 +5,7 @@ function Layout() {
   return (
     <div className="flex min-h-screen flex-col gap-8">
       <Header />
-      <main className="mx-auto w-full flex-1 md:w-11/12">
+      <main className="mx-auto w-full flex-1 md:w-11/12 min-h-lvh">
         <Outlet />
       </main>
       <Footer />
