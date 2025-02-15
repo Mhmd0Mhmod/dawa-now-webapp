@@ -7,11 +7,7 @@ import tseslint from "typescript-eslint";
 export default tseslint.config(
   { ignores: ["dist"] },
   {
-    extends: [js.configs.recommended
-      ,
-      tseslint.configs.strict,
-      tseslint.configs.stylistic
-      , ...tseslint.configs.recommended ],
+    extends: [js.configs.recommended, tseslint.configs.strict, tseslint.configs.stylistic, ...tseslint.configs.recommended],
     files: ["**/*.{ts,tsx}"],
     languageOptions: {
       ecmaVersion: 2020,
@@ -23,12 +19,14 @@ export default tseslint.config(
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
-      "react-refresh/only-export-components": [
-        "warn",
-        { allowConstantExport: true },
-      ],
+      "react-refresh/only-export-components": ["warn", { allowConstantExport: true }],
       "no-unused-vars": "warn",
-      "@typescript-eslint/no-unused-vars": "warn"
+      "@typescript-eslint/no-unused-vars": "warn",
     },
-  }
+    overrides: [
+      {
+        files: ["*.js", "*.jsx", "*.ts", "*.tsx"],
+      },
+    ],
+  },
 );
